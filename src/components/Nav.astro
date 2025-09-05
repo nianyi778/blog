@@ -2,6 +2,7 @@
 interface Props {
 	currentNav?: string;
 }
+import { withBase } from '~/utils/url';
 const { currentNav } = Astro.props;
 
 const navs = [
@@ -25,7 +26,7 @@ const navs = [
 						aria-label={`Navigate to ${nav.name}`}
 						data-nav={nav.name}
 					>
-						<a href={nav.href}>{nav.name}</a>
+						<a href={withBase(nav.href)}>{nav.name}</a>
 					</button>
 				</li>
 			))

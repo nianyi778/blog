@@ -2,6 +2,7 @@
 import { Picture } from 'astro:assets';
 import img from '~/assets/undraw_dog_c7i6.svg';
 import { SiteDescription, SiteTitle } from '~/config';
+import { withBase } from '~/utils/url';
 import MarkdownLayout from '~/layouts/MarkdownLayout.astro';
 ---
 
@@ -18,7 +19,7 @@ import MarkdownLayout from '~/layouts/MarkdownLayout.astro';
 			<p>
 				This is a blog template built with <a href="https://astro.build">Astro</a>. The theme
 				originates from <a href="https://github.com/varkai/hugo-theme-zozo">hugo-theme-zozo</a>.
-				Check out <a href="/posts/getting-started">the docs</a> to get started. Here are some
+				Check out <a href={withBase('/posts/getting-started')}>the docs</a> to get started. Here are some
 				features:
 			</p>
 			<ul class="list-disc">

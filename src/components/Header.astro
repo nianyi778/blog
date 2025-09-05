@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import { Icon } from 'astro-icon/components';
 import { Hide, SiteDescription, SiteTitle, Socials } from '~/config';
 import Nav from './Nav.astro';
+import { withBase } from '~/utils/url';
 import ThemeToggler from './ThemeToggler.astro';
 
 interface Props {
@@ -78,7 +79,7 @@ for (const platform in Socials) {
 		!Hide.includes('logo') ? (
 			<a
 				transition:persist
-				href="/"
+				href={withBase('/')}
 				aria-label="go to index"
 				class={customLogo ? '' : 'w-[4.5rem] text-4xl'}
 			>
@@ -108,7 +109,7 @@ for (const platform in Socials) {
 			<Nav currentNav={currentNav} />
 			{
 				!Hide.includes('search') && (
-					<a href="/search" title="Navigate to search page" aria-label="Navigate to search page">
+					<a href={withBase('/search')} title="Navigate to search page" aria-label="Navigate to search page">
 						<Icon name="ri:search-2-line" class="opacity-75 hover:opacity-100" />
 					</a>
 				)
