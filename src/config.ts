@@ -37,7 +37,7 @@ export const Socials: Record<string, Record<string, string>> = {
 // doc: https://giscus.app
 // data-theme is auto changed between noborder_light / noborder_gray
 export const GiscusConfig: Record<string, string> = {
-	'data-repo': 'nianyi778/astro-blog',
+	'data-repo': 'nianyi778/asro-blog',
 	'data-repo-id': 'R_kgDOPo9_ew',
 	'data-category': 'General',
 	'data-category-id': 'DIC_kwDOPo9_e84CvAb5',
