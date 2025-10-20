@@ -27,11 +27,11 @@ import { transformerEnhanser } from './src/utils/shiki';
 
 // Configure base differently for Vercel vs GitHub Pages
 const normalizeBase = (val) => {
-  if (!val || val === '/') return '/';
-  let b = String(val);
-  if (!b.startsWith('/')) b = `/${b}`;
-  if (!b.endsWith('/')) b = `${b}/`;
-  return b;
+	if (!val || val === '/') return '/';
+	let b = String(val);
+	if (!b.startsWith('/')) b = `/${b}`;
+	if (!b.endsWith('/')) b = `${b}/`;
+	return b;
 };
 const isVercel = !!process.env.VERCEL;
 const BASE = isVercel ? '/' : normalizeBase(process.env.BASE_URL);
