@@ -9,11 +9,11 @@ tags:
 
 ## Getting Started
 
-Download the [codebase](https://github.com/nianyi778/astro-blog) first. [Bun](https://bun.sh) is recommended for this project.
+Download the [codebase](https://github.com/nianyi778/blog) first. [Bun](https://bun.sh) is recommended for this project.
 
 ```shell
 # let bun to create a local repo using this template
-bun create nianyi778/astro-blog
+bun create nianyi778/blog
 bun install
 ```
 

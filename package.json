@@ -1,19 +1,19 @@
 {
-	"name": "astro-blog-zozo",
+	"name": "blog-zozo",
 	"version": "0.0.3",
 	"author": {
 		"name": "Ladit",
 		"email": "i@ladit.me",
 		"url": "https://github.com/ladit"
 	},
-	"homepage": "https://github.com/nianyi778/astro-blog",
+	"homepage": "https://github.com/nianyi778/blog",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/nianyi778/astro-blog.git"
+		"url": "git+https://github.com/nianyi778/blog.git"
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/nianyi778/astro-blog/issues"
+		"url": "https://github.com/nianyi778/blog/issues"
 	},
 	"type": "module",
 	"engines": {
