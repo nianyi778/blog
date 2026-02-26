@@ -49,6 +49,8 @@ jobs:
             --site "${{ steps.pages.outputs.origin }}" \
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
+        env:
+          GALLERY_INDEX_URL: ${{ vars.GALLERY_INDEX_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
