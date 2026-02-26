@@ -61,7 +61,6 @@ interface GalleryIndex {
 // ── Constants ──────────────────────────────────────────────────────
 
 const INDEX_KEY = 'gallery/index.json';
-const PINTEREST_SENDER_DOMAIN = 'pinterest.com';
 const MAX_IMAGES_PER_EMAIL = 50;
 
 // Images are immutable — cache for 1 year
