@@ -1,0 +1,143 @@
+---
+export interface GalleryImage {
+	id: string;
+	src: string;
+	thumb: string;
+	alt: string;
+	width: number;
+	height: number;
+	date: string;
+}
+
+interface Props {
+	images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="gallery-grid" id="gallery-grid">
+	{
+		images.map((img) => (
+			<figure
+				class="gallery-item"
+				data-gallery-item
+				data-src={img.src}
+				data-alt={img.alt}
+				data-id={img.id}
+			>
+				<img
+					src={img.thumb}
+					alt={img.alt}
+					width={img.width}
+					height={img.height}
+					loading="lazy"
+					decoding="async"
+					style={`aspect-ratio: ${img.width}/${img.height};`}
+				/>
+				<figcaption class="gallery-item-caption">
+					<span>{img.alt}</span>
+					<time datetime={img.date}>
+						{new Date(img.date).toLocaleDateString('zh-CN', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}
+					</time>
+				</figcaption>
+			</figure>
+		))
+	}
+</div>
+
+<style>
+	.gallery-grid {
+		column-count: 4;
+		column-gap: 14px;
+		padding: 0;
+	}
+
+	.gallery-item {
+		break-inside: avoid;
+		margin: 0 0 14px 0;
+		border-radius: 10px;
+		overflow: hidden;
+		cursor: pointer;
+		position: relative;
+		background: #e5e5e5;
+	}
+
+	:global(.dark) .gallery-item {
+		background: #333;
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: auto;
+		display: block;
+		object-fit: cover;
+		transition: transform 0.3s ease, opacity 0.3s ease;
+	}
+
+	.gallery-item:hover img {
+		transform: scale(1.03);
+		opacity: 0.92;
+	}
+
+	.gallery-item-caption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 24px 12px 10px;
+		background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
+		color: #fff;
+		font-size: 0.8rem;
+		line-height: 1.4;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 8px;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.gallery-item:hover .gallery-item-caption {
+		opacity: 1;
+	}
+
+	.gallery-item-caption span {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		flex: 1;
+	}
+
+	.gallery-item-caption time {
+		flex-shrink: 0;
+		opacity: 0.8;
+		font-size: 0.75rem;
+	}
+
+	/* Responsive */
+	@media (max-width: 1200px) {
+		.gallery-grid {
+			column-count: 3;
+		}
+	}
+	@media (max-width: 768px) {
+		.gallery-grid {
+			column-count: 2;
+			column-gap: 10px;
+		}
+		.gallery-item {
+			margin-bottom: 10px;
+			border-radius: 8px;
+		}
+	}
+	@media (max-width: 480px) {
+		.gallery-grid {
+			column-count: 1;
+		}
+	}
+</style>

@@ -1,0 +1,29 @@
+#:schema node_modules/wrangler/config-schema.json
+
+name = "pinterest-email-worker"
+main = "src/index.ts"
+compatibility_date = "2026-02-01"
+
+# ── Environment Variables ──
+[vars]
+# Backblaze B2 S3-compatible endpoint (e.g. https://s3.us-west-004.backblazeb2.com)
+B2_ENDPOINT = "https://s3.us-east-005.backblazeb2.com"
+
+# B2 bucket name
+B2_BUCKET_NAME = "pinterest-gallery"
+
+# Public URL of this Worker — used to build image src in index.json
+# After deploy, this is your *.workers.dev URL or custom domain
+# e.g. https://pinterest-email-worker.your-subdomain.workers.dev
+# or   https://gallery.yourdomain.com (if you set up a custom domain)
+WORKER_PUBLIC_URL = "https://pinterest-email-worker.nianyi778.workers.dev"
+
+# Gmail address to forward a copy to (optional)
+FORWARD_TO = "nianyi778@gmail.com"
+
+# Vercel Deploy Hook URL (optional, triggers rebuild after new images)
+VERCEL_DEPLOY_HOOK = "https://api.vercel.com/v1/integrations/deploy/prj_xf3skTPE0bWN7Q9rhA0AIiAaTbuF/8W8ah7agPo"
+
+# ── Secrets (set via `wrangler secret put`) ──
+# B2_KEY_ID      — Backblaze Application Key ID
+# B2_APP_KEY     — Backblaze Application Key

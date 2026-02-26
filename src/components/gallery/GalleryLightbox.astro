@@ -1,0 +1,257 @@
+---
+/**
+ * GalleryLightbox — self-contained lightbox using <dialog>.
+ * Pure vanilla JS, zero dependencies, portable across themes.
+ *
+ * Usage: include once on the gallery page.
+ * It auto-binds to any element with [data-gallery-item].
+ */
+---
+
+<dialog id="gallery-lightbox" class="gallery-lightbox">
+	<div class="lightbox-backdrop" data-lightbox-close></div>
+	<div class="lightbox-content">
+		<img id="lightbox-img" class="lightbox-img" src="" alt="" />
+		<p id="lightbox-caption" class="lightbox-caption"></p>
+	</div>
+	<button class="lightbox-close" data-lightbox-close aria-label="Close lightbox">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<line x1="18" y1="6" x2="6" y2="18"></line>
+			<line x1="6" y1="6" x2="18" y2="18"></line>
+		</svg>
+	</button>
+	<button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">
+		<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<polyline points="15 18 9 12 15 6"></polyline>
+		</svg>
+	</button>
+	<button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">
+		<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<polyline points="9 18 15 12 9 6"></polyline>
+		</svg>
+	</button>
+</dialog>
+
+<script>
+	function initLightbox() {
+		const dialog = document.getElementById('gallery-lightbox') as HTMLDialogElement | null;
+		const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+		const caption = document.getElementById('lightbox-caption') as HTMLParagraphElement | null;
+		const prevBtn = document.getElementById('lightbox-prev') as HTMLButtonElement | null;
+		const nextBtn = document.getElementById('lightbox-next') as HTMLButtonElement | null;
+
+		if (!dialog || !img || !caption || !prevBtn || !nextBtn) return;
+
+		let items: HTMLElement[] = [];
+		let currentIndex = 0;
+
+		function open(index: number) {
+			items = Array.from(document.querySelectorAll<HTMLElement>('[data-gallery-item]'));
+			if (index < 0 || index >= items.length) return;
+			currentIndex = index;
+			show();
+			dialog!.showModal();
+		}
+
+		function show() {
+			const item = items[currentIndex];
+			if (!item) return;
+			const src = item.dataset.src || '';
+			const alt = item.dataset.alt || '';
+			img!.src = src;
+			img!.alt = alt;
+			caption!.textContent = alt;
+			prevBtn!.style.display = currentIndex > 0 ? '' : 'none';
+			nextBtn!.style.display = currentIndex < items.length - 1 ? '' : 'none';
+		}
+
+		function close() {
+			dialog!.close();
+			img!.src = '';
+		}
+
+		// Bind click on gallery items
+		document.addEventListener('click', (e) => {
+			const item = (e.target as HTMLElement).closest<HTMLElement>('[data-gallery-item]');
+			if (item) {
+				const allItems = Array.from(document.querySelectorAll<HTMLElement>('[data-gallery-item]'));
+				const idx = allItems.indexOf(item);
+				if (idx !== -1) open(idx);
+			}
+		});
+
+		// Close buttons
+		dialog.querySelectorAll('[data-lightbox-close]').forEach((el) => {
+			el.addEventListener('click', close);
+		});
+
+		// Nav
+		prevBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			if (currentIndex > 0) {
+				currentIndex--;
+				show();
+			}
+		});
+		nextBtn.addEventListener('click', (e) => {
+			e.stopPropagation();
+			if (currentIndex < items.length - 1) {
+				currentIndex++;
+				show();
+			}
+		});
+
+		// Keyboard
+		dialog.addEventListener('keydown', (e) => {
+			if (e.key === 'ArrowLeft' && currentIndex > 0) {
+				currentIndex--;
+				show();
+			} else if (e.key === 'ArrowRight' && currentIndex < items.length - 1) {
+				currentIndex++;
+				show();
+			} else if (e.key === 'Escape') {
+				close();
+			}
+		});
+
+		// Close on backdrop click (native dialog behavior)
+		dialog.addEventListener('click', (e) => {
+			if (e.target === dialog) close();
+		});
+	}
+
+	// Support Astro view transitions
+	document.addEventListener('astro:page-load', initLightbox);
+	// Fallback for initial load without transitions
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initLightbox);
+	} else {
+		initLightbox();
+	}
+</script>
+
+<style>
+	.gallery-lightbox {
+		max-width: 100dvw;
+		max-height: 100dvh;
+		width: 100dvw;
+		height: 100dvh;
+		padding: 0;
+		margin: 0;
+		border: none;
+		background: transparent;
+		overflow: hidden;
+	}
+
+	.gallery-lightbox::backdrop {
+		background: rgba(0, 0, 0, 0.88);
+	}
+
+	.lightbox-backdrop {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+	}
+
+	.lightbox-content {
+		position: fixed;
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		z-index: 1;
+		padding: 48px 64px;
+		pointer-events: none;
+	}
+
+	.lightbox-img {
+		max-width: 100%;
+		max-height: calc(100dvh - 120px);
+		object-fit: contain;
+		border-radius: 6px;
+		pointer-events: auto;
+		user-select: none;
+		-webkit-user-drag: none;
+	}
+
+	.lightbox-caption {
+		margin-top: 12px;
+		color: rgba(255, 255, 255, 0.82);
+		font-size: 0.9rem;
+		text-align: center;
+		max-width: 600px;
+		pointer-events: auto;
+	}
+
+	.lightbox-close {
+		position: fixed;
+		top: 16px;
+		right: 16px;
+		z-index: 10;
+		background: rgba(255, 255, 255, 0.12);
+		border: none;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		color: #fff;
+		transition: background 0.2s;
+	}
+
+	.lightbox-close:hover {
+		background: rgba(255, 255, 255, 0.25);
+	}
+
+	.lightbox-nav {
+		position: fixed;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 10;
+		background: rgba(255, 255, 255, 0.1);
+		border: none;
+		border-radius: 50%;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		color: #fff;
+		transition: background 0.2s;
+	}
+
+	.lightbox-nav:hover {
+		background: rgba(255, 255, 255, 0.25);
+	}
+
+	.lightbox-prev {
+		left: 16px;
+	}
+
+	.lightbox-next {
+		right: 16px;
+	}
+
+	@media (max-width: 768px) {
+		.lightbox-content {
+			padding: 48px 16px;
+		}
+
+		.lightbox-nav {
+			width: 36px;
+			height: 36px;
+		}
+
+		.lightbox-prev {
+			left: 8px;
+		}
+
+		.lightbox-next {
+			right: 8px;
+		}
+	}
+</style>
