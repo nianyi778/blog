@@ -17,7 +17,7 @@ tags:
 3. 把改动拆成可审查的原子提交
 4. 组织 PR 标题、描述、关联 Issue/Jira
 
-这些步骤都不复杂，但每天重复执行，既耗时又容易出现不一致。`branch-commit-pr` 这个项目，目标就是把这条链路做成 AI 代理可复用的 Skill，让流程自动且稳定。
+这些步骤都不复杂，但每天重复执行，既耗时又容易出现不一致。[`branch-commit-pr`](https://github.com/nianyi778/branch-commit-pr) 这个项目，目标就是把这条链路做成 AI 代理可复用的 Skill，让流程自动且稳定。
 
 ## 项目定位
 
