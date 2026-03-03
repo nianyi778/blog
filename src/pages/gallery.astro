@@ -1,9 +1,9 @@
 ---
 import GalleryGrid from '~/components/gallery/GalleryGrid.astro';
-import GalleryLightbox from '~/components/gallery/GalleryLightbox.astro';
 import type { GalleryImage } from '~/components/gallery/GalleryGrid.astro';
-import ScaffoldLayout from '~/layouts/ScaffoldLayout.astro';
+import GalleryLightbox from '~/components/gallery/GalleryLightbox.astro';
 import fallbackData from '~/data/gallery.json';
+import ScaffoldLayout from '~/layouts/ScaffoldLayout.astro';
 
 /**
  * Gallery data loading strategy (build-time):
@@ -25,7 +25,9 @@ if (GALLERY_INDEX_URL) {
 			const data = await resp.json();
 			images = data.images || [];
 		} else {
-			console.warn(`[gallery] Failed to fetch R2 index: ${resp.status}, using fallback`);
+			console.warn(
+				`[gallery] Failed to fetch R2 index: ${resp.status}, using fallback`,
+			);
 			images = fallbackData.images;
 		}
 	} catch (e) {

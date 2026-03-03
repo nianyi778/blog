@@ -1,148 +1,148 @@
 {
-  "images": [
-    {
-      "id": "a1b2c3d4-0001",
-      "src": "https://picsum.photos/id/10/800/1200",
-      "thumb": "https://picsum.photos/id/10/400/600",
-      "alt": "Forest landscape",
-      "width": 800,
-      "height": 1200,
-      "date": "2026-02-24"
-    },
-    {
-      "id": "a1b2c3d4-0002",
-      "src": "https://picsum.photos/id/15/800/530",
-      "thumb": "https://picsum.photos/id/15/400/265",
-      "alt": "Misty bridge over river",
-      "width": 800,
-      "height": 530,
-      "date": "2026-02-23"
-    },
-    {
-      "id": "a1b2c3d4-0003",
-      "src": "https://picsum.photos/id/29/800/1070",
-      "thumb": "https://picsum.photos/id/29/400/535",
-      "alt": "Mountain wilderness",
-      "width": 800,
-      "height": 1070,
-      "date": "2026-02-22"
-    },
-    {
-      "id": "a1b2c3d4-0004",
-      "src": "https://picsum.photos/id/37/800/500",
-      "thumb": "https://picsum.photos/id/37/400/250",
-      "alt": "Coastal cliffs at sunset",
-      "width": 800,
-      "height": 500,
-      "date": "2026-02-21"
-    },
-    {
-      "id": "a1b2c3d4-0005",
-      "src": "https://picsum.photos/id/42/800/1100",
-      "thumb": "https://picsum.photos/id/42/400/550",
-      "alt": "Vintage camera on wooden table",
-      "width": 800,
-      "height": 1100,
-      "date": "2026-02-20"
-    },
-    {
-      "id": "a1b2c3d4-0006",
-      "src": "https://picsum.photos/id/49/800/600",
-      "thumb": "https://picsum.photos/id/49/400/300",
-      "alt": "Autumn leaves pattern",
-      "width": 800,
-      "height": 600,
-      "date": "2026-02-19"
-    },
-    {
-      "id": "a1b2c3d4-0007",
-      "src": "https://picsum.photos/id/65/800/1300",
-      "thumb": "https://picsum.photos/id/65/400/650",
-      "alt": "Desert sand dunes",
-      "width": 800,
-      "height": 1300,
-      "date": "2026-02-18"
-    },
-    {
-      "id": "a1b2c3d4-0008",
-      "src": "https://picsum.photos/id/76/800/540",
-      "thumb": "https://picsum.photos/id/76/400/270",
-      "alt": "Japanese street at night",
-      "width": 800,
-      "height": 540,
-      "date": "2026-02-17"
-    },
-    {
-      "id": "a1b2c3d4-0009",
-      "src": "https://picsum.photos/id/84/800/1000",
-      "thumb": "https://picsum.photos/id/84/400/500",
-      "alt": "Botanical illustration",
-      "width": 800,
-      "height": 1000,
-      "date": "2026-02-16"
-    },
-    {
-      "id": "a1b2c3d4-0010",
-      "src": "https://picsum.photos/id/96/800/600",
-      "thumb": "https://picsum.photos/id/96/400/300",
-      "alt": "Architecture detail",
-      "width": 800,
-      "height": 600,
-      "date": "2026-02-15"
-    },
-    {
-      "id": "a1b2c3d4-0011",
-      "src": "https://picsum.photos/id/100/800/1250",
-      "thumb": "https://picsum.photos/id/100/400/625",
-      "alt": "Portrait with soft lighting",
-      "width": 800,
-      "height": 1250,
-      "date": "2026-02-14"
-    },
-    {
-      "id": "a1b2c3d4-0012",
-      "src": "https://picsum.photos/id/119/800/580",
-      "thumb": "https://picsum.photos/id/119/400/290",
-      "alt": "Ocean waves crashing",
-      "width": 800,
-      "height": 580,
-      "date": "2026-02-13"
-    },
-    {
-      "id": "a1b2c3d4-0013",
-      "src": "https://picsum.photos/id/129/800/1150",
-      "thumb": "https://picsum.photos/id/129/400/575",
-      "alt": "Watercolor painting style",
-      "width": 800,
-      "height": 1150,
-      "date": "2026-02-12"
-    },
-    {
-      "id": "a1b2c3d4-0014",
-      "src": "https://picsum.photos/id/137/800/530",
-      "thumb": "https://picsum.photos/id/137/400/265",
-      "alt": "City skyline at dusk",
-      "width": 800,
-      "height": 530,
-      "date": "2026-02-11"
-    },
-    {
-      "id": "a1b2c3d4-0015",
-      "src": "https://picsum.photos/id/142/800/950",
-      "thumb": "https://picsum.photos/id/142/400/475",
-      "alt": "Coffee shop interior",
-      "width": 800,
-      "height": 950,
-      "date": "2026-02-10"
-    },
-    {
-      "id": "a1b2c3d4-0016",
-      "src": "https://picsum.photos/id/160/800/600",
-      "thumb": "https://picsum.photos/id/160/400/300",
-      "alt": "Minimalist desk setup",
-      "width": 800,
-      "height": 600,
-      "date": "2026-02-09"
-    }
-  ]
+	"images": [
+		{
+			"id": "a1b2c3d4-0001",
+			"src": "https://picsum.photos/id/10/800/1200",
+			"thumb": "https://picsum.photos/id/10/400/600",
+			"alt": "Forest landscape",
+			"width": 800,
+			"height": 1200,
+			"date": "2026-02-24"
+		},
+		{
+			"id": "a1b2c3d4-0002",
+			"src": "https://picsum.photos/id/15/800/530",
+			"thumb": "https://picsum.photos/id/15/400/265",
+			"alt": "Misty bridge over river",
+			"width": 800,
+			"height": 530,
+			"date": "2026-02-23"
+		},
+		{
+			"id": "a1b2c3d4-0003",
+			"src": "https://picsum.photos/id/29/800/1070",
+			"thumb": "https://picsum.photos/id/29/400/535",
+			"alt": "Mountain wilderness",
+			"width": 800,
+			"height": 1070,
+			"date": "2026-02-22"
+		},
+		{
+			"id": "a1b2c3d4-0004",
+			"src": "https://picsum.photos/id/37/800/500",
+			"thumb": "https://picsum.photos/id/37/400/250",
+			"alt": "Coastal cliffs at sunset",
+			"width": 800,
+			"height": 500,
+			"date": "2026-02-21"
+		},
+		{
+			"id": "a1b2c3d4-0005",
+			"src": "https://picsum.photos/id/42/800/1100",
+			"thumb": "https://picsum.photos/id/42/400/550",
+			"alt": "Vintage camera on wooden table",
+			"width": 800,
+			"height": 1100,
+			"date": "2026-02-20"
+		},
+		{
+			"id": "a1b2c3d4-0006",
+			"src": "https://picsum.photos/id/49/800/600",
+			"thumb": "https://picsum.photos/id/49/400/300",
+			"alt": "Autumn leaves pattern",
+			"width": 800,
+			"height": 600,
+			"date": "2026-02-19"
+		},
+		{
+			"id": "a1b2c3d4-0007",
+			"src": "https://picsum.photos/id/65/800/1300",
+			"thumb": "https://picsum.photos/id/65/400/650",
+			"alt": "Desert sand dunes",
+			"width": 800,
+			"height": 1300,
+			"date": "2026-02-18"
+		},
+		{
+			"id": "a1b2c3d4-0008",
+			"src": "https://picsum.photos/id/76/800/540",
+			"thumb": "https://picsum.photos/id/76/400/270",
+			"alt": "Japanese street at night",
+			"width": 800,
+			"height": 540,
+			"date": "2026-02-17"
+		},
+		{
+			"id": "a1b2c3d4-0009",
+			"src": "https://picsum.photos/id/84/800/1000",
+			"thumb": "https://picsum.photos/id/84/400/500",
+			"alt": "Botanical illustration",
+			"width": 800,
+			"height": 1000,
+			"date": "2026-02-16"
+		},
+		{
+			"id": "a1b2c3d4-0010",
+			"src": "https://picsum.photos/id/96/800/600",
+			"thumb": "https://picsum.photos/id/96/400/300",
+			"alt": "Architecture detail",
+			"width": 800,
+			"height": 600,
+			"date": "2026-02-15"
+		},
+		{
+			"id": "a1b2c3d4-0011",
+			"src": "https://picsum.photos/id/100/800/1250",
+			"thumb": "https://picsum.photos/id/100/400/625",
+			"alt": "Portrait with soft lighting",
+			"width": 800,
+			"height": 1250,
+			"date": "2026-02-14"
+		},
+		{
+			"id": "a1b2c3d4-0012",
+			"src": "https://picsum.photos/id/119/800/580",
+			"thumb": "https://picsum.photos/id/119/400/290",
+			"alt": "Ocean waves crashing",
+			"width": 800,
+			"height": 580,
+			"date": "2026-02-13"
+		},
+		{
+			"id": "a1b2c3d4-0013",
+			"src": "https://picsum.photos/id/129/800/1150",
+			"thumb": "https://picsum.photos/id/129/400/575",
+			"alt": "Watercolor painting style",
+			"width": 800,
+			"height": 1150,
+			"date": "2026-02-12"
+		},
+		{
+			"id": "a1b2c3d4-0014",
+			"src": "https://picsum.photos/id/137/800/530",
+			"thumb": "https://picsum.photos/id/137/400/265",
+			"alt": "City skyline at dusk",
+			"width": 800,
+			"height": 530,
+			"date": "2026-02-11"
+		},
+		{
+			"id": "a1b2c3d4-0015",
+			"src": "https://picsum.photos/id/142/800/950",
+			"thumb": "https://picsum.photos/id/142/400/475",
+			"alt": "Coffee shop interior",
+			"width": 800,
+			"height": 950,
+			"date": "2026-02-10"
+		},
+		{
+			"id": "a1b2c3d4-0016",
+			"src": "https://picsum.photos/id/160/800/600",
+			"thumb": "https://picsum.photos/id/160/400/300",
+			"alt": "Minimalist desk setup",
+			"width": 800,
+			"height": 600,
+			"date": "2026-02-09"
+		}
+	]
 }

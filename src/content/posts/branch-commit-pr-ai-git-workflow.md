@@ -1,6 +1,7 @@
 ---
 title: 用 AI Skill 打通 Git 开发最后一公里：从建分支到提 PR 的完整自动化
 description: 介绍 branch-commit-pr 项目如何自动识别仓库约定，完成分支创建、原子提交与 PR 生成，帮助团队把 AI 编码输出稳定接入工程流程。
+image: ../../assets/branch-commit-pr-ai-git-workflow.png
 date: 2026-03-03T00:00:00+08:00
 tags:
   - AI Coding Agent
@@ -11,6 +12,8 @@ tags:
 ---
 
 在很多团队里，真正拖慢节奏的并不总是“写代码”，而是这条重复且容易失误的链路：
+
+![branch-commit-pr 封面](../../assets/branch-commit-pr-ai-git-workflow.png)
 
 1. 从默认分支拉最新代码
 2. 按团队规范创建功能分支
