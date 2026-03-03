@@ -96,6 +96,44 @@ npx skills add nianyi778/branch-commit-pr
 
 需要注意：它聚焦的是“流程自动化”，不是替代代码评审。它能显著改善流程一致性，但最终质量仍然依赖团队评审与测试体系。
 
+## Jira 如何与 PR 绑定（实现细节）
+
+这一块的实现分两层：
+
+### 1) PR 文案关联（默认）
+
+触发条件：
+
+- 已配置 `JIRA_URL`、`JIRA_EMAIL`、`JIRA_API_TOKEN`
+- 在指令中明确提到 Jira ticket（如 `PROJ-123`）
+
+执行方式：
+
+- 在 PR 描述中增加 Jira 链接：
+  - `Jira: [PROJ-123](https://yourteam.atlassian.net/browse/PROJ-123)`
+
+这一步让评审可以从 PR 一跳到 Jira 工单，建立明确上下文。
+
+### 2) Jira 状态流转（可选）
+
+只有当你明确要求（例如“把 PROJ-123 流转到 In Review”）时，才会调用 Jira API：
+
+- 接口：`POST /rest/api/3/issue/{KEY}/transitions`
+- 认证：`email + api_token`（Basic Auth）
+- 参数：`transition id`（例如 `31`）
+
+也就是说，默认不会自动改 Jira 状态。
+
+### 3) 安全策略
+
+- 不猜 ticket：你不提 ticket，就不添加 Jira 关联
+- 不默认流转：你不明确要求，就不调用 transition API
+- Jira API 失败不阻断：会提示告警，但 PR 仍可创建
+
+### 4) 可直接使用的指令
+
+> “提交并创建 PR，关联 PROJ-123；然后把它流转到 In Review”
+
 ## 适用场景
 
 - 正在把 AI 编码接入日常研发流程的团队
